@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N4B-25-WOc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N4B-25-WOc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -203,14 +203,38 @@
                                     <constraint firstItem="SQa-Oy-BZK" firstAttribute="top" secondItem="H4G-QY-aoV" secondAttribute="top" constant="5" id="eJD-Ur-gzK"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zoo-kY-DbV">
+                                <rect key="frame" x="20" y="694" width="374" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMX-VM-GMR">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                        <state key="normal" title="Help"/>
+                                        <connections>
+                                            <action selector="helpButtonPressed" destination="N4B-25-WOc" eventType="touchUpInside" id="gJa-WJ-4Lw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lMX-VM-GMR" firstAttribute="centerX" secondItem="Zoo-kY-DbV" secondAttribute="centerX" id="5hK-iE-RoX"/>
+                                    <constraint firstItem="lMX-VM-GMR" firstAttribute="leading" secondItem="Zoo-kY-DbV" secondAttribute="leading" id="6fh-cc-P7C"/>
+                                    <constraint firstItem="lMX-VM-GMR" firstAttribute="top" secondItem="Zoo-kY-DbV" secondAttribute="top" id="J7w-Dp-qFN"/>
+                                    <constraint firstAttribute="bottom" secondItem="lMX-VM-GMR" secondAttribute="bottom" id="RHE-Yc-1vG"/>
+                                    <constraint firstItem="lMX-VM-GMR" firstAttribute="centerY" secondItem="Zoo-kY-DbV" secondAttribute="centerY" id="VXM-3K-uwx"/>
+                                    <constraint firstAttribute="trailing" secondItem="lMX-VM-GMR" secondAttribute="trailing" id="WBz-Td-1PW"/>
+                                    <constraint firstAttribute="height" constant="100" id="cY7-DP-8Nb"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5eT-24-qVC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5eT-24-qVC" firstAttribute="trailing" secondItem="m42-LK-6b5" secondAttribute="trailing" constant="20" id="5E4-3i-i6L"/>
                             <constraint firstItem="QqC-aQ-0Lz" firstAttribute="top" secondItem="H4G-QY-aoV" secondAttribute="top" constant="-5" id="7HL-SW-Qhn"/>
+                            <constraint firstItem="Zoo-kY-DbV" firstAttribute="bottom" secondItem="5eT-24-qVC" secondAttribute="bottom" constant="20" id="7NN-bn-t7s"/>
                             <constraint firstItem="m42-LK-6b5" firstAttribute="top" secondItem="5eT-24-qVC" secondAttribute="top" constant="20" id="IbW-PJ-gLR"/>
                             <constraint firstItem="5eT-24-qVC" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="m42-LK-6b5" secondAttribute="bottom" constant="20" id="OSM-lY-Hvh"/>
+                            <constraint firstItem="Zoo-kY-DbV" firstAttribute="trailing" secondItem="m42-LK-6b5" secondAttribute="trailing" id="aK4-jU-tFx"/>
+                            <constraint firstItem="Zoo-kY-DbV" firstAttribute="leading" secondItem="m42-LK-6b5" secondAttribute="leading" id="ePK-zt-6Zj"/>
                             <constraint firstItem="H4G-QY-aoV" firstAttribute="trailing" secondItem="QqC-aQ-0Lz" secondAttribute="trailing" constant="-5" id="mmo-Za-a8M"/>
                             <constraint firstItem="m42-LK-6b5" firstAttribute="leading" secondItem="5eT-24-qVC" secondAttribute="leading" constant="20" id="yZF-oT-uri"/>
                         </constraints>
@@ -218,6 +242,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addTreeButton" destination="Fhj-rd-bdN" id="2rZ-zP-GWY"/>
+                        <outlet property="helpButton" destination="lMX-VM-GMR" id="fO9-Ne-fkP"/>
                         <outlet property="logoutButton" destination="dtG-Qr-Hel" id="4M2-CC-Y94"/>
                         <outlet property="nameButton" destination="TxM-GO-ysI" id="hq9-Ra-6tA"/>
                         <outlet property="profileImageView" destination="BLJ-l5-Lzr" id="TmI-Fk-cjv"/>

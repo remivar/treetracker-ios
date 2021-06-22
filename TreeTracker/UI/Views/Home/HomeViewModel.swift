@@ -13,6 +13,7 @@ protocol HomeViewModelCoordinatorDelegate: class {
     func homeViewModel(_ homeViewModel: HomeViewModel, didSelectUploadListForPlanter planter: Planter)
     func homeViewModel(_ homeViewModel: HomeViewModel, didSelectViewProfileForPlanter planter: Planter)
     func homeViewModel(_ homeViewModel: HomeViewModel, didLogoutPlanter planter: Planter)
+    func homeViewModel(_ homeViewModel: HomeViewModel, didSelectHelp planter: Planter)
 }
 
 protocol HomeViewModelViewDelegate: class {
@@ -110,6 +111,10 @@ extension HomeViewModel {
 
     func viewProfileSelected() {
         coordinatorDelegate?.homeViewModel(self, didSelectViewProfileForPlanter: planter)
+    }
+    
+    func helpSelected() {
+        coordinatorDelegate?.homeViewModel(self, didSelectHelp: planter)
     }
 
     func logoutPlanter() {

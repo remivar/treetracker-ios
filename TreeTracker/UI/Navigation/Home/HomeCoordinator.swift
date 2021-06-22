@@ -63,8 +63,11 @@ private extension HomeCoordinator {
             animated: true
         )
     }
+    
+    func showHelp(planter: Planter) {
+        configuration.navigationController.pushViewController(helpViewController(), animated: true)
+    }
 }
-
 // MARK: - View Controllers
 private extension HomeCoordinator {
 
@@ -128,6 +131,11 @@ private extension HomeCoordinator {
         }()
         return viewController
     }
+    
+    func helpViewController() -> UIViewController {
+        let viewcontroller = StoryboardScene.Help.initialScene.instantiate()
+        return viewcontroller
+    }
 }
 
 // MARK: - HomeViewModelCoordinatorDelegate
@@ -147,6 +155,10 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 
     func homeViewModel(_ homeViewModel: HomeViewModel, didLogoutPlanter planter: Planter) {
         delegate?.homeCoordinatorDidLogout(self)
+    }
+    
+    func homeViewModel(_ homeViewModel: HomeViewModel, didSelectHelp planter: Planter) {
+        showHelp(planter: planter)
     }
 }
 

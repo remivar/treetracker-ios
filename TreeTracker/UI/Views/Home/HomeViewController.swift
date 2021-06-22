@@ -43,7 +43,6 @@ class HomeViewController: UIViewController, AlertPresenting {
             logoutButton.titleLabel?.font = FontFamily.Lato.regular.font(size: 16)
         }
     }
-
     @IBOutlet private var treesPlantedView: UIView! {
         didSet {
             treesPlantedView.layer.cornerRadius = 5.0
@@ -125,7 +124,14 @@ class HomeViewController: UIViewController, AlertPresenting {
         }
     }
     @IBOutlet private var addTreeButton: AddTreeButton!
-
+    @IBOutlet private var helpButton: UIButton! {
+        didSet {
+            helpButton.setTitle(L10n.Home.HelpButton.title, for: .normal)
+            helpButton.titleLabel?.font = FontFamily.Montserrat.semiBold.font(size: 20.0)
+            helpButton.setTitleColor(Asset.Colors.grayDark.color, for: .normal)
+        }
+    }
+    
     var viewModel: HomeViewModel? {
         didSet {
             viewModel?.viewDelegate = self
@@ -178,6 +184,10 @@ private extension HomeViewController {
 
     @IBAction func logoutButtonPressed() {
         viewModel?.logoutPlanter()
+    }
+    
+    @IBAction func helpButtonPressed() {
+        viewModel?.helpSelected()
     }
 }
 

@@ -71,6 +71,10 @@ internal enum L10n {
       /// ADD TREE
       internal static let title = L10n.tr("Localizable", "Home.AddTreeButton.Title")
     }
+    internal enum HelpButton {
+      /// HELP
+      internal static let title = L10n.tr("Localizable", "Home.HelpButton.Title")
+    }
     internal enum InfoLabel {
       internal enum TreesPlantedLabel {
         /// Trees Planted

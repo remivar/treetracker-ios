@@ -47,6 +47,7 @@
 "Home.UploadTreesButton.Title.Start" = "START UPLOAD";
 "Home.UploadTreesButton.Title.Stop" = "STOP UPLOAD";
 "Home.MyTreesButton.Title" = "MY TREES";
+"Home.HelpButton.Title" = "HELP";
 
 //Add Tree Screen
 "AddTree.Title" = "Add Tree";
