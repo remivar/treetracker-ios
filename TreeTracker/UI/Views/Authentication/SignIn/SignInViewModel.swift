@@ -63,9 +63,9 @@ class SignInViewModel {
     func updateUsername(username: String) {
         switch loginType {
         case .phoneNumber:
-            usernameValue = Validation.cleanedPhoneNumber(phoneNumber: username)
+            usernameValue = username.replacingOccurrences(of: " ", with: "")
         case .email:
-            usernameValue = username
+            usernameValue = username.replacingOccurrences(of: " ", with: "")
         }
     }
 

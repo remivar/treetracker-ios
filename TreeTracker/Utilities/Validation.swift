@@ -39,16 +39,6 @@ struct Validation {
             return .valid
         }
     }
-    
-    static func cleanedPhoneNumber(phoneNumber: String) -> String {
-              return phoneNumber
-                .replacingOccurrences(of: "+", with: "")
-                .replacingOccurrences(of: " ", with: "")
-                .replacingOccurrences(of: "(", with: "")
-                .replacingOccurrences(of: ")", with: "")
-                .replacingOccurrences(of: "-", with: "")
-    }
-
 }
 
 // MARK: - Private
@@ -83,6 +73,15 @@ private extension Validation {
             return true
         }
         return false
+    }
+    
+    static func cleanedPhoneNumber(phoneNumber: String) -> String {
+              return phoneNumber
+                .replacingOccurrences(of: "+", with: "")
+                .replacingOccurrences(of: " ", with: "")
+                .replacingOccurrences(of: "(", with: "")
+                .replacingOccurrences(of: ")", with: "")
+                .replacingOccurrences(of: "-", with: "")
     }
 
 }
